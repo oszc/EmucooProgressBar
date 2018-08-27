@@ -1,0 +1,12 @@
+<resources>
+    <declare-styleable name="EmucooProgressView">
+        <attr name="emu_pv_max" format="integer"/>
+        <attr name="emu_pv_progress" format="integer"/>
+        <attr name="emu_pv_need_tag" format="boolean"/>
+        <attr name="emu_pv_need_text" format="boolean"/>
+        <attr name="emu_pv_start_color" format="color"/>
+        <attr name="emu_pv_end_color" format="color"/>
+        <attr name="emu_pv_need_shadow" format="boolean"/>
+        <attr name="emu_pv_keep_gradient" format="boolean"/><!--保持颜色渐变，主要用于下载的进度条-->
+    </declare-styleable>
+</resources>
