@@ -157,7 +157,7 @@ public class EmucooProgressView extends View {
         if (widthMode == MeasureSpec.AT_MOST || widthMode == MeasureSpec.EXACTLY) {
             measuredWidth = width;
         } else {
-            measuredWidth = DipUtil.screenWidth();
+            measuredWidth = EmucooPbDipUtil.screenWidth();
         }
 
         String progress = getProgressString();
@@ -367,11 +367,11 @@ public class EmucooProgressView extends View {
     }
 
     private int dp(int i) {
-        return DipUtil.dip2px(i);
+        return EmucooPbDipUtil.dip2px(i);
     }
 
     private int sp(int i) {
-        return DipUtil.convertSpToPixels(i);
+        return EmucooPbDipUtil.convertSpToPixels(i);
     }
 
 }

@@ -2,7 +2,7 @@ package com.emucoo.emucooprogressbar;
 
 import android.util.TypedValue;
 
-public class DipUtil {
+public class EmucooPbDipUtil {
     public static int screenWidth(){
 
         return App.getInstance().getResources().getDisplayMetrics().widthPixels;
