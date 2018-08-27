@@ -307,7 +307,7 @@ public class EmucooProgressView extends View {
                         calculateShaderWidth(targetProgress),
                         mLineCenterY + mProgressCapRadius + dp(mLineDiffer) / 2,
                         mStartColor, mEndColor, Shader.TileMode.CLAMP);
-                ObjectAnimator.ofInt(EmucooProgressView.this, "progressInternal", mCurProgress, targetProgress).setDuration(250).start();
+                ObjectAnimator.ofInt(EmucooProgressView.this, "progressInternal", mCurProgress, targetProgress).setDuration(getDuration(targetProgress)).start();
             } else {
                 post(new Runnable() {
                     @Override
@@ -319,7 +319,7 @@ public class EmucooProgressView extends View {
                                 calculateShaderWidth(targetProgress),
                                 mLineCenterY + mProgressCapRadius + dp(mLineDiffer) / 2,
                                 mStartColor, mEndColor, Shader.TileMode.CLAMP);
-                        ObjectAnimator.ofInt(EmucooProgressView.this, "progressInternal", mCurProgress, targetProgress).setDuration(250).start();
+                        ObjectAnimator.ofInt(EmucooProgressView.this, "progressInternal", mCurProgress, targetProgress).setDuration(getDuration(targetProgress)).start();
                     }
                 });
             }
@@ -354,6 +354,17 @@ public class EmucooProgressView extends View {
             }
         }
 
+    }
+
+    private long getDuration(int targetProgress) {
+        if(mMaxProgress<=0){
+            return 0;
+        }
+        long duration = (long)(Math.abs(mCurProgress-targetProgress)/(float)mMaxProgress*800);
+        if(duration< 250){
+            duration= 250;
+        }
+        return duration;
     }
 
     private void setProgressInternal(int progress) {
