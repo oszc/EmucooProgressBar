@@ -2,7 +2,6 @@
 ![加载失败](https://github.com/oszc/EmucooProgressBar/blob/master/gifs/pb_no_shadow.gif?raw=true)
 ![加载失败](https://github.com/oszc/EmucooProgressBar/blob/master/gifs/pb_with_shader.gif?raw=true)
 
-
 #圆角ProgressBar使用方法：
 ```
 <com.emucoo.emucooprogressbar.EmucooProgressView
