@@ -188,7 +188,7 @@ public class EmucooProgressView extends View {
                 calculateProgress();
             }
             mGradient = new LinearGradient(mProgreStartX, mLineCenterY + mProgressCapRadius + dp(mLineDiffer) / 2, mProgreStopX, mLineCenterY + mProgressCapRadius + dp(mLineDiffer) / 2, mStartColor, mEndColor, Shader.TileMode.CLAMP);
-            System.out.println( "onMeasure: startX:" +mProgreStartX +"   endX:"+mProgreStopX+ " startColor:"+mStartColor+"  endColor:"+mEndColor);
+//            System.out.println( "onMeasure: startX:" +mProgreStartX +"   endX:"+mProgreStopX+ " startColor:"+mStartColor+"  endColor:"+mEndColor);
 //            new LinearGradient(mProgreStartX, mLineCenterY + mProgressCapRadius +  dp(mLineDiffer)/2, mWidth, mLineCenterY + mProgressCapRadius +  dp(mLineDiffer)/2, mStartColor, mEndColor, Shader.TileMode.CLAMP);
         }
 
@@ -228,8 +228,9 @@ public class EmucooProgressView extends View {
             mProgressTextPaint.setXfermode(mXorMode);
             canvas.drawText(progressString, x, y, mProgressTextPaint);
             mProgressTextPaint.setXfermode(null);
-            canvas.restoreToCount(saved);
         }
+
+        canvas.restoreToCount(saved);
 
         if(mNeedTag) {
             //最下面的点
@@ -256,9 +257,9 @@ public class EmucooProgressView extends View {
             mTextRect.right += dp(mTextPadding) * 2;
             mTextRect.bottom += dp(mTextPadding) * 2;
 
-            System.out.println("text rect:" + mTextRect);
-            System.out.println("on draw triangle height:" + dp(mDeltaHeight));
-            System.out.println("on draw -> text rect height:" + mTextRect.height());
+//            System.out.println("text rect:" + mTextRect);
+//            System.out.println("on draw triangle height:" + dp(mDeltaHeight));
+//            System.out.println("on draw -> text rect height:" + mTextRect.height());
 
             rectF.set(mTextRect);
             rectF.offset(mProgreStopX - mTextRect.width() / 2, -mTextRect.top);
@@ -300,7 +301,7 @@ public class EmucooProgressView extends View {
     public void setProgress(final int targetProgress, boolean needAnim) {
         if (needAnim) {
             if (isShown()) {
-                System.out.println("is shown");
+//                System.out.println("is shown");
                 mGradient = new LinearGradient(
                         mProgreStartX,
                         mLineCenterY + mProgressCapRadius + dp(mLineDiffer) / 2,
@@ -312,7 +313,7 @@ public class EmucooProgressView extends View {
                 post(new Runnable() {
                     @Override
                     public void run() {
-                        System.out.println("is not show");
+//                        System.out.println("is not show");
                         mGradient = new LinearGradient(
                                 mProgreStartX,
                                 mLineCenterY + mProgressCapRadius + dp(mLineDiffer) / 2,
